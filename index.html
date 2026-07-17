@@ -8,6 +8,11 @@
     <meta name="google-site-verification" content="30Y63clHeVVanQVM_TebeceVXTWlgfLOjEQD5JLqark" />
     <meta name="google-site-verification" content="RxFOa3dscJTATr2vs3w5EBJcI7E-PsI4Sp0KKTzRCdY" />
     <title>TABO-MEDIA | تسويق إلكتروني، إعلانات جوجل وفيسبوك وإنستجرام بالكويت</title>
+    
+    <!-- Favicon - TABO Logo -->
+    <link rel="icon" href="https://i.ibb.co/yJ1yxsy/TABO-Logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/yJ1yxsy/TABO-Logo.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet">
     
@@ -83,7 +88,7 @@
         }
 
         /* ============================================= */
-        /* TOP NAVBAR - UNCHANGED */
+        /* TOP NAVBAR - WITH TABO LOGO */
         /* ============================================= */
         .top-nav {
             display: flex;
@@ -102,15 +107,25 @@
         }
 
         .top-nav .logo-link {
-            font-size: 1.3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #FFD700, #D4AF37);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            display: flex;
+            align-items: center;
             text-decoration: none;
             padding: 5px 15px;
             border-left: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .top-nav .logo-link:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        .top-nav .logo-link .logo-img {
+            height: 60px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            transition: all 0.3s ease;
         }
 
         .top-nav .nav-links {
@@ -1282,7 +1297,7 @@
         }
 
         /* ============================================= */
-        /* FOOTER - UNCHANGED */
+        /* FOOTER - WITH TABO LOGO */
         /* ============================================= */
         .footer {
             text-align: center;
@@ -1294,6 +1309,30 @@
             border-top: 1px solid #D4AF37;
             font-size: 0.95rem;
         }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo a {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo a:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .footer-logo .footer-logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
         .keywords-zone {
             display: flex;
             flex-wrap: wrap;
@@ -1500,6 +1539,10 @@
         @media (max-width: 768px) {
             body { padding: 14px; }
             
+            .top-nav .logo-link .logo-img {
+                height: 50px;
+            }
+            
             .hero-premium {
                 min-height: auto;
                 padding: 30px 0;
@@ -1595,12 +1638,15 @@
                 gap: 8px;
             }
             .top-nav .logo-link {
-                font-size: 1rem;
                 padding: 5px 10px;
             }
             .top-nav .nav-links a {
                 font-size: 0.75rem;
                 padding: 6px 12px;
+            }
+
+            .footer-logo .footer-logo-img {
+                height: 40px;
             }
 
             .blog-posts-section {
@@ -1654,6 +1700,10 @@
         }
 
         @media (max-width: 480px) {
+            .top-nav .logo-link .logo-img {
+                height: 40px;
+            }
+            
             .hero-title {
                 font-size: 1.8rem;
             }
@@ -1748,6 +1798,10 @@
                 padding: 4px 10px;
             }
 
+            .footer-logo .footer-logo-img {
+                height: 35px;
+            }
+
             .hero-premium {
                 border-radius: 24px;
                 padding: 20px 0;
@@ -1769,10 +1823,12 @@
 <div class="main-container">
 
     <!-- ============================================= -->
-    <!-- TOP NAVBAR - UNCHANGED -->
+    <!-- TOP NAVBAR - WITH TABO LOGO -->
     <!-- ============================================= -->
     <div class="top-nav">
-        <a href="#" class="logo-link"><i class="fas fa-bullhorn"></i> TABO-MEDIA</a>
+        <a href="#" class="logo-link" title="TABO-MEDIA - الرئيسية">
+            <img src="https://i.ibb.co/yJ1yxsy/TABO-Logo.png" alt="TABO-MEDIA شعار" class="logo-img" width="60" height="60">
+        </a>
         <div class="nav-links">
             <a href="#" class="active"><i class="fas fa-home"></i> الرئيسية</a>
             <a href="#الخدمات"><i class="fas fa-bolt"></i> الخدمات</a>
@@ -2176,9 +2232,16 @@
     </div>
 
     <!-- ============================================= -->
-    <!-- FOOTER - UNCHANGED -->
+    <!-- FOOTER - WITH TABO LOGO -->
     <!-- ============================================= -->
     <div class="footer">
+        <!-- Footer Logo -->
+        <div class="footer-logo">
+            <a href="#" title="TABO-MEDIA - الرئيسية">
+                <img src="https://i.ibb.co/yJ1yxsy/TABO-Logo.png" alt="TABO-MEDIA شعار" class="footer-logo-img" width="50" height="50">
+            </a>
+        </div>
+
         <div class="keywords-zone">
             <span>✨ اعلان جوجل</span> <span>📢 اعلانات جوجل</span> <span>📞 اعلان اتصال</span> <span>💰 اعلان نقرة</span>
             <span>⚡ PPC</span> <span>🎯 اعلان اتصال مباشر</span> <span>🖥️ برمجة مواقع</span> <span>⚙️ تطوير ويب</span>
