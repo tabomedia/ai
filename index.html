@@ -1338,7 +1338,7 @@
     }
 
     /* ============================================= */
-    /* TESTIMONIALS SECTION - NEW */
+    /* TESTIMONIALS SECTION - unchanged */
     /* ============================================= */
     .testimonials-section {
       position: relative;
@@ -1672,6 +1672,258 @@
       font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.5);
       font-weight: 400;
+    }
+
+    /* ============================================= */
+    /* FAQ PREMIUM SECTION - NEW */
+    /* ============================================= */
+    .faq-section {
+      position: relative;
+      padding: 60px 0;
+      margin-bottom: 45px;
+      border-radius: 48px;
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      animation: sectionAppear 0.8s ease-out both;
+      animation-delay: 0.14s;
+    }
+
+    .faq-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(ellipse, rgba(212, 175, 55, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+      animation: glowPulse 8s ease-in-out infinite;
+    }
+
+    .faq-section::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 50%;
+      height: 60%;
+      background: radial-gradient(ellipse, rgba(255, 215, 0, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+      animation: glowPulse 10s ease-in-out infinite reverse;
+    }
+
+    .faq-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .faq-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      padding: 6px 22px;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #D4AF37;
+      backdrop-filter: blur(6px);
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .faq-badge i {
+      font-size: 0.9rem;
+      color: #FFD700;
+    }
+
+    .faq-title {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .faq-title .gold-text {
+      background: linear-gradient(135deg, #FFD700, #D4AF37, #FFD700);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 200%;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+
+    .faq-subtitle {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* FAQ Item */
+    .faq-item {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      position: relative;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(212, 175, 55, 0.15);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .faq-item.active {
+      border-color: rgba(212, 175, 55, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 175, 55, 0.04);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      padding: 20px 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: right;
+      transition: all 0.3s ease;
+      position: relative;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .faq-question:hover {
+      background: rgba(212, 175, 55, 0.04);
+    }
+
+    .faq-q-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      font-size: 0.9rem;
+      color: #D4AF37;
+    }
+
+    .faq-item.active .faq-q-icon {
+      background: rgba(212, 175, 55, 0.2);
+      border-color: rgba(212, 175, 55, 0.3);
+      transform: rotate(45deg);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+    }
+
+    .faq-q-icon i {
+      transition: transform 0.4s ease;
+    }
+
+    .faq-item.active .faq-q-icon i {
+      transform: rotate(45deg);
+    }
+
+    .faq-q-text {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.5;
+      transition: color 0.3s ease;
+    }
+
+    .faq-item.active .faq-q-text {
+      color: #D4AF37;
+    }
+
+    /* FAQ Answer */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1), padding 0.4s ease;
+      padding: 0 24px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 24px 20px 24px;
+    }
+
+    .faq-answer-inner {
+      padding-top: 4px;
+      border-top: 1px solid rgba(212, 175, 55, 0.06);
+    }
+
+    .faq-answer-inner p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 12px 0 0 0;
+      font-weight: 400;
+    }
+
+    .faq-answer-inner p strong {
+      color: #D4AF37;
+      font-weight: 700;
+    }
+
+    @media (max-width: 992px) {
+      .faq-title { font-size: 2.4rem; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .faq-section { padding: 40px 0; border-radius: 32px; }
+      .faq-container { padding: 0 20px; }
+      .faq-title { font-size: 2.0rem; }
+      .faq-subtitle { font-size: 1rem; }
+      .faq-question { padding: 16px 18px; font-size: 0.95rem; gap: 12px; }
+      .faq-q-icon { width: 30px; height: 30px; font-size: 0.75rem; }
+      .faq-q-text { font-size: 0.9rem; }
+      .faq-item.active .faq-answer { padding: 0 18px 16px 18px; }
+      .faq-answer-inner p { font-size: 0.9rem; }
+    }
+
+    @media (max-width: 480px) {
+      .faq-title { font-size: 1.7rem; }
+      .faq-badge { font-size: 0.75rem; padding: 4px 16px; }
+      .faq-question { padding: 14px 14px; font-size: 0.85rem; gap: 10px; }
+      .faq-q-icon { width: 26px; height: 26px; font-size: 0.65rem; }
+      .faq-q-text { font-size: 0.8rem; }
+      .faq-item.active .faq-answer { padding: 0 14px 14px 14px; }
+      .faq-answer-inner p { font-size: 0.85rem; }
     }
 
     /* ============================================= */
@@ -2656,6 +2908,7 @@
       .why-tabo-title { font-size: 2.8rem; }
       .portfolio-title { font-size: 2.8rem; }
       .testimonials-title { font-size: 2.8rem; }
+      .faq-title { font-size: 2.8rem; }
       .services-title { font-size: 2.8rem; }
       .services-grid { grid-template-columns: repeat(3, 1fr); }
     }
@@ -2679,6 +2932,8 @@
       .portfolio-title { font-size: 2.4rem; }
       .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonials-title { font-size: 2.4rem; }
+      .faq-title { font-size: 2.4rem; }
+      .faq-grid { grid-template-columns: 1fr; }
       .services-title { font-size: 2.4rem; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -2765,6 +3020,16 @@
       .testimonials-rating .rating-text { font-size: 1rem; }
       .slider-btn { width: 40px; height: 40px; font-size: 0.9rem; }
 
+      .faq-section { padding: 40px 0; border-radius: 32px; }
+      .faq-container { padding: 0 20px; }
+      .faq-title { font-size: 2.0rem; }
+      .faq-subtitle { font-size: 1rem; }
+      .faq-question { padding: 16px 18px; font-size: 0.95rem; gap: 12px; }
+      .faq-q-icon { width: 30px; height: 30px; font-size: 0.75rem; }
+      .faq-q-text { font-size: 0.9rem; }
+      .faq-item.active .faq-answer { padding: 0 18px 16px 18px; }
+      .faq-answer-inner p { font-size: 0.9rem; }
+
       .services-section { padding: 40px 0; border-radius: 32px; }
       .services-container { padding: 0 20px; }
       .services-title { font-size: 2.0rem; }
@@ -2832,6 +3097,14 @@
       .slider-controls { gap: 12px; }
       .slider-btn { width: 36px; height: 36px; font-size: 0.8rem; }
 
+      .faq-title { font-size: 1.7rem; }
+      .faq-badge { font-size: 0.75rem; padding: 4px 16px; }
+      .faq-question { padding: 14px 14px; font-size: 0.85rem; gap: 10px; }
+      .faq-q-icon { width: 26px; height: 26px; font-size: 0.65rem; }
+      .faq-q-text { font-size: 0.8rem; }
+      .faq-item.active .faq-answer { padding: 0 14px 14px 14px; }
+      .faq-answer-inner p { font-size: 0.85rem; }
+
       .services-title { font-size: 1.7rem; }
       .services-title-en { font-size: 0.9rem; }
       .services-badge { font-size: 0.75rem; padding: 4px 16px; }
@@ -2866,6 +3139,7 @@
         <a href="#why-tabo"><i class="fas fa-question-circle"></i> لماذا TABO؟</a>
         <a href="#portfolio"><i class="fas fa-briefcase"></i> معرض الأعمال</a>
         <a href="#testimonials"><i class="fas fa-comment-dots"></i> آراء العملاء</a>
+        <a href="#faq"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a>
         <a href="#services"><i class="fas fa-bolt"></i> الخدمات</a>
         <a href="#المتجر"><i class="fas fa-store"></i> المتجر</a>
         <a href="#المدونة" class="blog-link"><i class="fas fa-newspaper"></i> المدونة</a>
@@ -3387,6 +3661,163 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- FAQ PREMIUM SECTION - NEW -->
+    <!-- ============================================= -->
+    <section class="faq-section" id="faq">
+      <div class="faq-container">
+        <div class="faq-header">
+          <span class="faq-badge">
+            <i class="fas fa-question-circle"></i> الأسئلة الشائعة
+          </span>
+          <h2 class="faq-title">
+            إجابات على <span class="gold-text">استفساراتك</span>
+          </h2>
+          <p class="faq-subtitle">
+            نقدم لك إجابات واضحة ومباشرة لأكثر الأسئلة شيوعًا حول خدماتنا التسويقية.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+              <span class="faq-q-text">ما هي خدمات TABO-MEDIA الأساسية؟</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>نقدم في TABO-MEDIA مجموعة متكاملة من الخدمات التسويقية الرقمية تشمل: <strong>إعلانات جوجل (Google Ads)</strong>، <strong>إعلانات فيسبوك وإنستجرام (Meta Ads)</strong>، <strong>تحسين محركات البحث (SEO)</strong>، <strong>تطوير المواقع الإلكترونية</strong>، <strong>إدارة حسابات التواصل الاجتماعي</strong>، و<strong>حلول التسويق بالذكاء الاصطناعي</strong>. جميع خدماتنا مصممة لتحقيق أعلى عائد استثماري لعملائنا.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+              <span class="faq-q-text">كم تكلفة إدارة حملات Google Ads؟</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>تختلف تكلفة إدارة حملات Google Ads حسب حجم الحملة وأهدافها وميزانيتها الإعلانية. نقدم خططًا مرنة تبدأ من <strong>50 دينار كويتي</strong> شهريًا لإدارة الحملات الأساسية، مع إمكانية تخصيص ميزانية تناسب احتياجاتك. نضمن لك الشفافية الكاملة في الإنفاق الإعلاني وتقارير أداء دورية.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+              <span class="faq-q-text">كم تستغرق فترة ظهور نتائج SEO؟</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>تحسين محركات البحث (SEO) هو استثمار طويل المدى. تبدأ النتائج الأولية في الظهور عادةً خلال <strong>3 إلى 6 أشهر</strong> من بدء العمل، مع تحسن مستمر في الترتيب وزيادة الزيارات العضوية. نوفر لك تقارير شهرية مفصلة لتتبع التقدم وتحقيق أقصى استفادة من استراتيجيتك.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+              <span class="faq-q-text">هل تقدمون خدمات تصميم وتطوير مواقع؟</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>نعم، لدينا فريق متخصص في <strong>تصميم وتطوير المواقع الإلكترونية</strong> بأنواعها: مواقع الشركات، المتاجر الإلكترونية، المنصات التعليمية، والبوابات الخدمية. نركز على سرعة التحميل، تجربة المستخدم السلسة، وتحسين محركات البحث (SEO) منذ البداية.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+              <span class="faq-q-text">كيف يمكنني طلب استشارة مجانية؟</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>يسعدنا تقديم <strong>استشارة مجانية</strong> لمناقشة أهدافك التسويقية واحتياجاتك. يمكنك التواصل معنا عبر <strong>واتساب</strong> على الرقم <strong>+965 94728014</strong> أو عبر <strong>نموذج الاتصال</strong> في الموقع. سنقوم بتحليل نشاطك التجاري وتقديم خطة أولية تناسب ميزانيتك.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+              <span class="faq-q-text">هل تدعمون الإعلانات على TikTok وSnapchat؟</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>بالتأكيد! نحن ندير حملات إعلانية على جميع المنصات الرئيسية بما فيها <strong>TikTok</strong> و <strong>Snapchat</strong> و <strong>Meta (فيسبوك وإنستجرام)</strong>. نمتلك خبرة في استهداف الفئات العمرية الشابة عبر محتوى بصري مبتكر يحقق أعلى معدلات تفاعل وتحويل.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Structured Data FAQ Schema -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "ما هي خدمات TABO-MEDIA الأساسية؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نقدم في TABO-MEDIA مجموعة متكاملة من الخدمات التسويقية الرقمية تشمل: إعلانات جوجل (Google Ads)، إعلانات فيسبوك وإنستجرام (Meta Ads)، تحسين محركات البحث (SEO)، تطوير المواقع الإلكترونية، إدارة حسابات التواصل الاجتماعي، وحلول التسويق بالذكاء الاصطناعي."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كم تكلفة إدارة حملات Google Ads؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "تختلف تكلفة إدارة حملات Google Ads حسب حجم الحملة وأهدافها وميزانيتها الإعلانية. نقدم خططًا مرنة تبدأ من 50 دينار كويتي شهريًا لإدارة الحملات الأساسية."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كم تستغرق فترة ظهور نتائج SEO؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "تبدأ النتائج الأولية في الظهور عادةً خلال 3 إلى 6 أشهر من بدء العمل على تحسين محركات البحث (SEO)، مع تحسن مستمر في الترتيب وزيادة الزيارات العضوية."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل تقدمون خدمات تصميم وتطوير مواقع؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، لدينا فريق متخصص في تصميم وتطوير المواقع الإلكترونية بأنواعها: مواقع الشركات، المتاجر الإلكترونية، المنصات التعليمية، والبوابات الخدمية."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كيف يمكنني طلب استشارة مجانية؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "يمكنك التواصل معنا عبر واتساب على الرقم +965 94728014 أو عبر نموذج الاتصال في الموقع للحصول على استشارة مجانية."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل تدعمون الإعلانات على TikTok وSnapchat؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، ندير حملات إعلانية على جميع المنصات الرئيسية بما فيها TikTok و Snapchat و Meta (فيسبوك وإنستجرام) بخبرة عالية."
+            }
+          }
+        ]
+      }
+      </script>
     </section>
 
     <!-- ============================================= -->
@@ -4167,6 +4598,70 @@
       cards.forEach(card => {
         observer.observe(card);
       });
+    })();
+
+    // =============================================
+    // FAQ ACCORDION
+    // =============================================
+    (function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('.faq-q-icon i');
+
+        question.addEventListener('click', function() {
+          const isActive = item.classList.contains('active');
+
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+              const otherAnswer = otherItem.querySelector('.faq-answer');
+              const otherIcon = otherItem.querySelector('.faq-q-icon i');
+              otherAnswer.style.maxHeight = '0';
+              otherIcon.className = 'fas fa-plus';
+              otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Toggle current item
+          if (isActive) {
+            item.classList.remove('active');
+            answer.style.maxHeight = '0';
+            icon.className = 'fas fa-plus';
+            question.setAttribute('aria-expanded', 'false');
+          } else {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.className = 'fas fa-minus';
+            question.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        // Keyboard accessibility - Enter and Space
+        question.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            question.click();
+          }
+        });
+      });
+
+      // Auto-open first FAQ item on load with delay for animation
+      setTimeout(() => {
+        const firstItem = document.querySelector('.faq-item');
+        if (firstItem) {
+          const question = firstItem.querySelector('.faq-question');
+          const answer = firstItem.querySelector('.faq-answer');
+          const icon = question.querySelector('.faq-q-icon i');
+          firstItem.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.className = 'fas fa-minus';
+          question.setAttribute('aria-expanded', 'true');
+        }
+      }, 600);
     })();
   </script>
 
