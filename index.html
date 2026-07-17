@@ -1675,6 +1675,349 @@
     }
 
     /* ============================================= */
+    /* SERVICES SECTION - PREMIUM REDESIGN */
+    /* ============================================= */
+    .services-section {
+      position: relative;
+      padding: 60px 0;
+      margin-bottom: 45px;
+      border-radius: 48px;
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+    }
+
+    .services-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(ellipse, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+      animation: glowPulse 8s ease-in-out infinite;
+    }
+
+    .services-section::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 50%;
+      height: 60%;
+      background: radial-gradient(ellipse, rgba(255, 215, 0, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+      animation: glowPulse 10s ease-in-out infinite reverse;
+    }
+
+    .services-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .services-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      padding: 6px 22px;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #D4AF37;
+      backdrop-filter: blur(6px);
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .services-badge i {
+      font-size: 0.9rem;
+      color: #FFD700;
+    }
+
+    .services-title {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 4px;
+      letter-spacing: -1px;
+    }
+
+    .services-title .gold-text {
+      background: linear-gradient(135deg, #FFD700, #D4AF37, #FFD700);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 200%;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+
+    .services-title-en {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: -4px;
+      margin-bottom: 12px;
+    }
+
+    .services-subtitle {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(6px);
+      border-radius: 28px;
+      padding: 28px 22px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .service-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 28px;
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.07), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 12px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.06);
+    }
+
+    .service-card .service-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #D4AF37;
+      margin-bottom: 16px;
+      transition: all 0.5s ease;
+    }
+
+    .service-card:hover .service-icon {
+      background: rgba(212, 175, 55, 0.18);
+      border-color: rgba(212, 175, 55, 0.3);
+      transform: scale(1.08) rotate(-4deg);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+    }
+
+    .service-card .service-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+
+    .service-card .service-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .service-card .service-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px 0;
+    }
+
+    .service-card .service-features li {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-card .service-features li i {
+      color: #D4AF37;
+      font-size: 0.6rem;
+      width: 16px;
+      text-align: center;
+    }
+
+    .service-card .service-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 60px;
+      background: rgba(212, 175, 55, 0.08);
+      color: #D4AF37;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .service-card .service-btn:hover {
+      background: rgba(212, 175, 55, 0.18);
+      border-color: rgba(212, 175, 55, 0.3);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.05);
+      transform: translateX(-4px);
+    }
+
+    .service-card .service-btn i {
+      font-size: 0.8rem;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card .service-btn:hover i {
+      transform: translateX(-4px);
+    }
+
+    /* Services CTA */
+    .services-cta {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(6px);
+      border-radius: 40px;
+      padding: 40px 36px;
+      border: 1px solid rgba(212, 175, 55, 0.08);
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    .services-cta:hover {
+      border-color: rgba(212, 175, 55, 0.15);
+      box-shadow: 0 0 50px rgba(212, 175, 55, 0.02);
+    }
+
+    .services-cta h3 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .services-cta h3 .gold-text {
+      background: linear-gradient(135deg, #FFD700, #D4AF37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .services-cta p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 600px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .services-cta .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .services-cta .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: none;
+      cursor: pointer;
+    }
+
+    .services-cta .cta-btn-primary {
+      background: linear-gradient(135deg, #D4AF37, #FFD700);
+      color: #0A0A0A;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+    }
+
+    .services-cta .cta-btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+    }
+
+    .services-cta .cta-btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .services-cta .cta-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+      border-color: rgba(212, 175, 55, 0.3);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.05);
+    }
+
+    .services-cta .cta-btn i {
+      font-size: 1rem;
+    }
+
+    /* ============================================= */
     /* BLOG POSTS SECTION - UNCHANGED */
     /* ============================================= */
     .blog-posts-section {
@@ -2305,7 +2648,7 @@
     }
 
     /* ============================================= */
-    /* RESPONSIVE - updated for testimonials */
+    /* RESPONSIVE - updated for services */
     /* ============================================= */
     @media (max-width: 1200px) {
       .hero-title { font-size: 3.4rem; }
@@ -2313,6 +2656,8 @@
       .why-tabo-title { font-size: 2.8rem; }
       .portfolio-title { font-size: 2.8rem; }
       .testimonials-title { font-size: 2.8rem; }
+      .services-title { font-size: 2.8rem; }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 992px) {
@@ -2334,6 +2679,8 @@
       .portfolio-title { font-size: 2.4rem; }
       .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonials-title { font-size: 2.4rem; }
+      .services-title { font-size: 2.4rem; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -2417,6 +2764,21 @@
       .testimonials-rating .rating-stars i { font-size: 1.1rem; }
       .testimonials-rating .rating-text { font-size: 1rem; }
       .slider-btn { width: 40px; height: 40px; font-size: 0.9rem; }
+
+      .services-section { padding: 40px 0; border-radius: 32px; }
+      .services-container { padding: 0 20px; }
+      .services-title { font-size: 2.0rem; }
+      .services-subtitle { font-size: 1rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .service-card { padding: 22px 18px 20px; border-radius: 22px; }
+      .service-card .service-icon { width: 56px; height: 56px; font-size: 1.6rem; }
+      .service-card .service-name { font-size: 1.05rem; }
+      .service-card .service-desc { font-size: 0.85rem; }
+      .service-card .service-features li { font-size: 0.75rem; }
+      .services-cta { padding: 30px 24px; border-radius: 32px; }
+      .services-cta h3 { font-size: 1.6rem; }
+      .services-cta p { font-size: 0.95rem; }
+      .services-cta .cta-btn { padding: 12px 24px; font-size: 0.9rem; }
     }
 
     @media (max-width: 480px) {
@@ -2469,6 +2831,17 @@
       .testimonials-rating .rating-divider { display: none; }
       .slider-controls { gap: 12px; }
       .slider-btn { width: 36px; height: 36px; font-size: 0.8rem; }
+
+      .services-title { font-size: 1.7rem; }
+      .services-title-en { font-size: 0.9rem; }
+      .services-badge { font-size: 0.75rem; padding: 4px 16px; }
+      .services-grid { grid-template-columns: 1fr; gap: 16px; }
+      .service-card { padding: 20px 16px 18px; }
+      .service-card .service-icon { width: 50px; height: 50px; font-size: 1.4rem; }
+      .services-cta { padding: 24px 18px; }
+      .services-cta h3 { font-size: 1.4rem; }
+      .services-cta .cta-buttons { flex-direction: column; align-items: center; }
+      .services-cta .cta-btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -2493,7 +2866,7 @@
         <a href="#why-tabo"><i class="fas fa-question-circle"></i> لماذا TABO؟</a>
         <a href="#portfolio"><i class="fas fa-briefcase"></i> معرض الأعمال</a>
         <a href="#testimonials"><i class="fas fa-comment-dots"></i> آراء العملاء</a>
-        <a href="#الخدمات"><i class="fas fa-bolt"></i> الخدمات</a>
+        <a href="#services"><i class="fas fa-bolt"></i> الخدمات</a>
         <a href="#المتجر"><i class="fas fa-store"></i> المتجر</a>
         <a href="#المدونة" class="blog-link"><i class="fas fa-newspaper"></i> المدونة</a>
         <a href="#اتصل-بنا"><i class="fas fa-phone"></i> اتصل بنا</a>
@@ -2853,7 +3226,7 @@
     </section>
 
     <!-- ============================================= -->
-    <!-- TESTIMONIALS SECTION - NEW -->
+    <!-- TESTIMONIALS SECTION - unchanged -->
     <!-- ============================================= -->
     <section class="testimonials-section" id="testimonials">
       <div class="testimonials-container">
@@ -3017,6 +3390,146 @@
     </section>
 
     <!-- ============================================= -->
+    <!-- SERVICES SECTION - PREMIUM REDESIGN -->
+    <!-- ============================================= -->
+    <section class="services-section" id="services">
+      <div class="services-container">
+        <div class="services-header">
+          <span class="services-badge">
+            <i class="fas fa-bolt"></i> خدماتنا
+          </span>
+          <h2 class="services-title">
+            <span class="gold-text">خدماتنا</span> الاحترافية
+          </h2>
+          <span class="services-title-en">Our Premium Services</span>
+          <p class="services-subtitle">
+            نقدم حلول تسويق رقمية متكاملة تساعد الشركات على النمو وتحقيق أعلى عائد على الاستثمار.
+          </p>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+          <!-- Service 1: Google Ads -->
+          <div class="service-card" data-delay="0">
+            <div class="service-icon"><i class="fab fa-google"></i></div>
+            <h4 class="service-name">Google Ads</h4>
+            <p class="service-desc">حملات إعلانية مدفوعة عبر محرك البحث الأكبر عالميًا.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-circle"></i> استهداف دقيق بالكلمات المفتاحية</li>
+              <li><i class="fas fa-circle"></i> تحسين مستمر للعائد الاستثماري</li>
+              <li><i class="fas fa-circle"></i> تقارير أداء أسبوعية</li>
+            </ul>
+            <a href="#" class="service-btn">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 2: Meta Ads -->
+          <div class="service-card" data-delay="100">
+            <div class="service-icon"><i class="fab fa-meta"></i></div>
+            <h4 class="service-name">Meta Ads</h4>
+            <p class="service-desc">إعلانات فيسبوك وإنستجرام بجميع أنواعها وأشكالها.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-circle"></i> استهداف ديموغرافي ونفسي</li>
+              <li><i class="fas fa-circle"></i> إعلانات الفيديو والقصص</li>
+              <li><i class="fas fa-circle"></i> حملات تحويل للمبيعات</li>
+            </ul>
+            <a href="#" class="service-btn">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 3: SEO -->
+          <div class="service-card" data-delay="200">
+            <div class="service-icon"><i class="fas fa-search"></i></div>
+            <h4 class="service-name">SEO</h4>
+            <p class="service-desc">تحسين محركات البحث لتصدر نتائج جوجل عضويًا.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-circle"></i> تحليل الكلمات المفتاحية</li>
+              <li><i class="fas fa-circle"></i> بناء روابط خلفية قوية</li>
+              <li><i class="fas fa-circle"></i> تحسين المحتوى والتقنية</li>
+            </ul>
+            <a href="#" class="service-btn">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 4: Website Development -->
+          <div class="service-card" data-delay="300">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <h4 class="service-name">Website Development</h4>
+            <p class="service-desc">تطوير مواقع ويب احترافية سريعة وآمنة.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-circle"></i> تصميم متجاوب مع الجوال</li>
+              <li><i class="fas fa-circle"></i> تحسين سرعة الموقع</li>
+              <li><i class="fas fa-circle"></i> أنظمة إدارة محتوى مخصصة</li>
+            </ul>
+            <a href="#" class="service-btn">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 5: Brand Identity -->
+          <div class="service-card" data-delay="400">
+            <div class="service-icon"><i class="fas fa-palette"></i></div>
+            <h4 class="service-name">Brand Identity</h4>
+            <p class="service-desc">بناء هوية بصرية مميزة تعكس قيم علامتك التجارية.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-circle"></i> تصميم شعار احترافي</li>
+              <li><i class="fas fa-circle"></i> دليل هوية متكامل</li>
+              <li><i class="fas fa-circle"></i> تصاميم تسويقية متناسقة</li>
+            </ul>
+            <a href="#" class="service-btn">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 6: Social Media Management -->
+          <div class="service-card" data-delay="500">
+            <div class="service-icon"><i class="fas fa-share-alt"></i></div>
+            <h4 class="service-name">Social Media Management</h4>
+            <p class="service-desc">إدارة احترافية لحسابات التواصل الاجتماعي.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-circle"></i> استراتيجية محتوى شهرية</li>
+              <li><i class="fas fa-circle"></i> تفاعل مستمر مع الجمهور</li>
+              <li><i class="fas fa-circle"></i> تقارير نمو وتحليل</li>
+            </ul>
+            <a href="#" class="service-btn">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 7: AI Marketing -->
+          <div class="service-card" data-delay="600">
+            <div class="service-icon"><i class="fas fa-brain"></i></div>
+            <h4 class="service-name">AI Marketing</h4>
+            <p class="service-desc">تسخير الذكاء الاصطناعي لتحسين أداء حملاتك.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-circle"></i> تحليل البيانات الضخمة</li>
+              <li><i class="fas fa-circle"></i> أتمتة الإعلانات الذكية</li>
+              <li><i class="fas fa-circle"></i> تحسين التكلفة تلقائيًا</li>
+            </ul>
+            <a href="#" class="service-btn">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 8: Analytics & Tracking -->
+          <div class="service-card" data-delay="700">
+            <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+            <h4 class="service-name">Analytics &amp; Tracking</h4>
+            <p class="service-desc">تتبع وتحليل الأداء لاتخاذ قرارات مبنية على البيانات.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-circle"></i> تثبيت وتحسين Google Analytics</li>
+              <li><i class="fas fa-circle"></i> لوحات تحكم مخصصة</li>
+              <li><i class="fas fa-circle"></i> تقارير سلوك المستخدم</li>
+            </ul>
+            <a href="#" class="service-btn">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="services-cta">
+          <h3>هل تحتاج خدمة <span class="gold-text">مخصصة</span>؟</h3>
+          <p>فريق TABO جاهز لبناء استراتيجية تسويق تناسب نشاطك التجاري بالكامل.</p>
+          <div class="cta-buttons">
+            <a href="#اتصل-بنا" class="cta-btn cta-btn-primary" onclick="return gtag_report_conversion('#اتصل-بنا')">
+              <i class="fas fa-calendar-check"></i> احجز استشارة مجانية
+            </a>
+            <a href="https://wa.me/+96594728014" class="cta-btn cta-btn-secondary" onclick="return gtag_report_conversion('https://wa.me/+96594728014')">
+              <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
     <!-- BLOG POSTS SECTION - UNCHANGED -->
     <!-- ============================================= -->
     <div class="blog-posts-section" id="المدونة">
@@ -3167,7 +3680,7 @@
       <h2>📞 اعلان اتصال مباشر – عملاء يتصلون بك فوراً</h2>
       <div class="blog-meta">📱 حل مثالي للمطاعم، الصيانة، والعيادات</div>
       <p><strong>اعلان اتصال</strong> و <strong>اعلان اتصال مباشر</strong> هما أقوى طرق جذب العملاء بالكويت. حملات Call Ads عبر جوجل وفيسبوك.</p>
-      <p>هذا النوع من الإعلانات يسمح للعميل بالاتصال بك مباشرة بنقرة واحدة، مما يزيد من سرعة التحويل.</p>
+      <p>هذا النوع من الإعلانات يسمح للعميل بالاتصال بك مباشر بنقرة واحدة، مما يزيد من سرعة التحويل.</p>
     </div>
 
     <div id="اعلانات-شاملة" class="blog-section">
@@ -3629,6 +4142,31 @@
         }
       });
 
+    })();
+
+    // =============================================
+    // SERVICES SCROLL ANIMATION
+    // =============================================
+    (function() {
+      const cards = document.querySelectorAll('.service-card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = parseInt(entry.target.dataset.delay) || 0;
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, delay);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      cards.forEach(card => {
+        observer.observe(card);
+      });
     })();
   </script>
 
